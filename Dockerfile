@@ -1,21 +1,18 @@
-##
-# geodata/mapserver
-#
-# MapServer compiled with a broad range of options enabled including a
-# comprehensive GDAL library.
-#
+FROM ubuntu:18.04
 
-FROM geodata/gdal:latest
-
-MAINTAINER Homme Zwaagstra <hrz@geodata.soton.ac.uk>
+MAINTAINER Matthew Geiger <mgeiger@unca.edu>
 
 USER root
 
-# Install the application.
+EXPOSE 80
+
 ADD . /tmp/build/
+
 RUN /tmp/build/build.sh
 
-EXPOSE 80
+# Install the test mapfile.
+RUN mkdir -p /usr/local/share/mapserver/examples
+COPY test.map /usr/local/share/mapserver/examples/
 
 # Start the fcgi and web servers.
 CMD ["/usr/local/bin/run.sh"]
