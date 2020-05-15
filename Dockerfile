@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-MAINTAINER Matthew Geiger <mgeiger@unca.edu>
+MAINTAINER NEMAC Dev Team <nemac@unca.edu>
 
 USER root
 
