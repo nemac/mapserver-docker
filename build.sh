@@ -15,8 +15,8 @@ apt-get install -y \
 
 # Set up the Nginx Mapserver configuration.
 cd /tmp/build 
-cp ./mapserver /etc/nginx/sites-available/mapserver
-ln -s /etc/nginx/sites-available/mapserver /etc/nginx/sites-enabled/mapserver
+cp ./mapserver.conf /etc/nginx/sites-available/mapserver.conf
+ln -s /etc/nginx/sites-available/mapserver.conf /etc/nginx/sites-enabled/mapserver.conf
 rm /etc/nginx/sites-enabled/default
 
 # Set up the run script for starting services.
