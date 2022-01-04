@@ -6,12 +6,14 @@ apt-get install -y \
   nginx \
   software-properties-common
 
-add-apt-repository -y ppa:ubuntugis/ppa
-
 apt-get update && \
 apt-get install -y \
-  gdal-bin=2.4.2+dfsg-1~bionic0 \
-  mapserver-bin=7.4.1-1~bionic0
+  gdal-bin=2.4.3+dfsg-1 \
+  mapserver-bin=7.4.1-1 \
+  python3-mapscript=7.4.1-1 \
+  python3-pip
+
+pip3 install Pillow
 
 # Set up the Nginx Mapserver configuration.
 cd /tmp/build 
